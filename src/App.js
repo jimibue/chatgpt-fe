@@ -35,9 +35,12 @@ function App() {
     console.log();
     try {
       setLoading(true);
-      let res = await axios.post("http://localhost:8080/basic", {
-        message: { role: "user", content: userContent },
-      });
+      let res = await axios.post(
+        "https://jy-chatgpt-api-yo.onrender.com/basic",
+        {
+          message: { role: "user", content: userContent },
+        }
+      );
       console.log(res);
       setMessages([res.data.completion]);
     } catch (err) {
