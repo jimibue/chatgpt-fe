@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -7,17 +6,18 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState([]);
   const [userContent, setUserContent] = useState("");
-  const getDataDemo = async () => {
-    try {
-      setLoading(true);
-      let res = await axios.get("http://localhost:8080/basic/test");
-      setMessages([res.data.completion]);
-    } catch (err) {
-      console.log({ err });
-    } finally {
-      setLoading(false);
-    }
-  };
+  // this is here for education sake
+  // const getDataDemo = async () => {
+  //   try {
+  //     setLoading(true);
+  //     let res = await axios.get("http://localhost:8080/basic/test");
+  //     setMessages([res.data.completion]);
+  //   } catch (err) {
+  //     console.log({ err });
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
   useEffect(() => {
     // getDataDemo();
   }, []);
@@ -29,7 +29,7 @@ function App() {
     return <p>{JSON.stringify(messages)}</p>;
   };
 
-  // post '/basic' => {message:{user:string, content:string}}
+  //  post '/basic' => {message:{user:string, content:string}}
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log();
