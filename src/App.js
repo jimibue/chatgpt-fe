@@ -1,6 +1,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import MultipleMessage from "./MultipleMessages";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -60,6 +61,10 @@ function App() {
         />
         <button>{loading ? "loading" : "ask"}</button>
       </form>
+
+      <hr />
+      <hr />
+      <MultipleMessage />
     </div>
   );
 }
